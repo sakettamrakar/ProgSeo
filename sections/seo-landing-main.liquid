@@ -4,6 +4,20 @@
     <p>Link a SEO landing metaobject to this page to display its content.</p>
   </div>
 {%- else -%}
+  {%- assign intro_html = landing.intro_html | default: '' -%}
+  {%- assign body_html = landing.body_html | default: '' -%}
+  {%- assign content_length = intro_html | append: body_html | strip_html | strip | size -%}
+  {%- assign threshold = section.settings.noindex_threshold | default: 300 -%}
+  {%- assign noindex_flag = false -%}
+  {%- if content_length < threshold -%}
+    {%- assign noindex_flag = true -%}
+  {%- endif -%}
+  {%- if page.metafields.custom.noindex.value == true -%}
+    {%- assign noindex_flag = true -%}
+  {%- endif -%}
+  {%- if noindex_flag -%}
+    <meta name="robots" content="noindex,follow">
+  {%- endif -%}
   {%- comment -%}Structured data injection{%- endcomment -%}
   {%- assign faq_items = landing.faq_json | default: '[]' | parse_json -%}
   {%- assign faq_entity_list = '' -%}
@@ -66,6 +80,13 @@
 {% schema %}
 {
   "name": "SEO landing main",
-  "settings": []
+  "settings": [
+    {
+      "type": "number",
+      "id": "noindex_threshold",
+      "label": "Noindex threshold (characters)",
+      "default": 300
+    }
+  ]
 }
 {% endschema %}
