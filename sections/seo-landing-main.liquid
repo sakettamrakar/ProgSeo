@@ -1,0 +1,46 @@
+{%- assign landing = page.metafields.custom.seo_landing_ref.value -%}
+{%- if landing == blank -%}
+  <div class="page-content">
+    <p>Link a SEO landing metaobject to this page to display its content.</p>
+  </div>
+{%- else -%}
+  {%- assign heading = landing.h1 | default: page.title -%}
+  <article class="site-page seo-landing" data-template-page>
+    <header class="page-masthead">
+      <h1 class="page-title">{{ heading }}</h1>
+      {%- if landing.city != blank or landing.category != blank -%}
+        <p class="page-subtitle">
+          {%- if landing.city != blank -%}{{ landing.city }}{%- endif -%}
+          {%- if landing.city != blank and landing.category != blank -%} / {%- endif -%}
+          {%- if landing.category != blank -%}{{ landing.category }}{%- endif -%}
+        </p>
+      {%- endif -%}
+    </header>
+    {%- if landing.hero -%}
+      {%- assign hero_alt = landing.hero.alt | default: heading -%}
+      <div class="seo-landing__hero">
+        {{ landing.hero | image_url: width: 2048 | image_tag: alt: hero_alt }}
+      </div>
+    {%- endif -%}
+    {%- if landing.intro_html != blank -%}
+      <div class="seo-landing__intro rte">
+        {{ landing.intro_html }}
+      </div>
+    {%- endif -%}
+    {%- if landing.body_html != blank -%}
+      <div class="seo-landing__body rte">
+        {{ landing.body_html }}
+      </div>
+    {%- endif -%}
+    <aside class="seo-landing__related">
+      <p>Related content coming soon.</p>
+    </aside>
+  </article>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "SEO landing main",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,31 @@
+{%- assign landing = page.metafields.custom.seo_landing_ref.value -%}
+{%- if landing == blank or landing.faq_json == blank -%}
+  <div class="page-content">
+    <p>Add FAQ entries to the SEO landing metaobject to display them here.</p>
+  </div>
+{%- else -%}
+  {%- assign faqs = landing.faq_json | default: '[]' | parse_json -%}
+  {%- if faqs != blank and faqs.size > 0 -%}
+    <div class="seo-landing__faq">
+      <dl>
+        {%- for item in faqs -%}
+          {%- if item.question != blank and item.answer != blank -%}
+            <dt>{{ item.question }}</dt>
+            <dd>{{ item.answer }}</dd>
+          {%- endif -%}
+        {%- endfor -%}
+      </dl>
+    </div>
+  {%- else -%}
+    <div class="page-content">
+      <p>No FAQ entries found.</p>
+    </div>
+  {%- endif -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "SEO landing FAQ",
+  "settings": []
+}
+{% endschema %}
