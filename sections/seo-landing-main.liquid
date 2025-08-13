@@ -4,6 +4,31 @@
     <p>Link a SEO landing metaobject to this page to display its content.</p>
   </div>
 {%- else -%}
+  {%- comment -%}Structured data injection{%- endcomment -%}
+  {%- assign faq_items = landing.faq_json | default: '[]' | parse_json -%}
+  {%- assign faq_entity_list = '' -%}
+  {%- for item in faq_items -%}
+    {%- if item.question != blank and item.answer != blank -%}
+      {%- capture faq_entity -%}{"@type":"Question","name":{{ item.question | json }},"acceptedAnswer":{"@type":"Answer","text":{{ item.answer | json }}}}{%- endcapture -%}
+      {%- if faq_entity_list != '' -%}{%- assign faq_entity_list = faq_entity_list | append: ',' -%}{%- endif -%}
+      {%- assign faq_entity_list = faq_entity_list | append: faq_entity -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- if faq_entity_list != '' -%}
+    {%- capture faq_schema -%}{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{{ faq_entity_list }}]}{%- endcapture -%}
+    {% render 'schema-helpers', data: faq_schema %}
+  {%- endif -%}
+
+  {%- if landing.city != blank -%}
+    {%- capture local_business_schema -%}{"@context":"https://schema.org","@type":"LocalBusiness","name":{{ shop.name | json }},"address":{"@type":"PostalAddress","addressLocality":{{ landing.city | json }}}}{%- endcapture -%}
+    {% render 'schema-helpers', data: local_business_schema %}
+  {%- endif -%}
+
+  {%- if landing.category != blank -%}
+    {%- capture product_schema -%}{"@context":"https://schema.org","@type":"Product","name":{{ landing.category | json }},"sku":"SKU-EXAMPLE"}{%- endcapture -%}
+    {% render 'schema-helpers', data: product_schema %}
+  {%- endif -%}
+
   {%- assign heading = landing.h1 | default: page.title -%}
   <article class="site-page seo-landing" data-template-page>
     <header class="page-masthead">

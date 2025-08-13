@@ -10,6 +10,7 @@
     "theme:push": "echo 'Run shopify theme push'",
     "theme:pull": "echo 'Run shopify theme pull'",
     "lint": "echo 'linting'",
-    "format": "echo 'formatting'"
+    "format": "echo 'formatting'",
+    "test": "npm run lint"
   }
 }
