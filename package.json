@@ -9,7 +9,7 @@
     "theme:dev": "echo 'Run shopify theme dev'",
     "theme:push": "echo 'Run shopify theme push'",
     "theme:pull": "echo 'Run shopify theme pull'",
-    "lint": "eslint .",
+    "lint": "eslint --no-error-on-unmatched-pattern .",
     "format": "prettier --write .",
     "test": "npm run lint",
     "prettier:check": "prettier --check .",

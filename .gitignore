@@ -1,0 +1,4 @@
+node_modules/
+
+# Shopify theme-check cache
+.cache/
