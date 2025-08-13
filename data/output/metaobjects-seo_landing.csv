@@ -1,0 +1,3 @@
+Type,Identifier,Metaobject Type,Field: city,Field: category,Field: h1,Field: intro_html,Field: body_html,Field: faq_json,Field: seo_title,Field: seo_description
+metaobject,portland-plumbing,seo_landing,Portland,plumbing,Portland Plumbing Services,<p>Intro to Portland plumbing</p>,<p>Body about plumbers</p>,"[{""q"":""Q1"",""a"":""A1""}]",Portland Plumbing,Best plumbers in Portland
+metaobject,seattle-roofing,seo_landing,Seattle,roofing,Seattle Roofing Pros,<p>Intro to Seattle roofing</p>,<p>Roofing body</p>,[],Seattle Roofing,Top roofing in Seattle
