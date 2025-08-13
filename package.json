@@ -1,0 +1,15 @@
+{
+  "name": "progseo",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "theme:dev": "echo 'Run shopify theme dev'",
+    "theme:push": "echo 'Run shopify theme push'",
+    "theme:pull": "echo 'Run shopify theme pull'",
+    "lint": "echo 'linting'",
+    "format": "echo 'formatting'"
+  }
+}
