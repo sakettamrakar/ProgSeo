@@ -1,1 +1,1 @@
-{"sections":{"main":{"type":"seo-landing-main","settings":{}},"faq":{"type":"seo-landing-faq","settings":{}}},"order":["main","faq"]}
+{"sections":{"main":{"type":"seo-landing-main","settings":{}},"related":{"type":"seo-related-links","settings":{}},"faq":{"type":"seo-landing-faq","settings":{}}},"order":["main","related","faq"]}
