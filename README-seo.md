@@ -2,6 +2,21 @@
 
 This repository supports automated SEO landing pages powered by Shopify.
 
+## Quickstart
+1. Export environment variables:
+   ```bash
+   export STORE_DOMAIN=your-dev-store.myshopify.com
+   export THEME_NAME="Dev Theme"
+   ```
+2. Authenticate with Shopify CLI:
+   ```bash
+   ./scripts/shopify-login.sh
+   ```
+3. Start the local preview with hot reload:
+   ```bash
+   ./scripts/theme-dev.sh
+   ```
+
 ## Architecture
 - Content sourced from `SHEET_CSV_URL` and transformed via custom scripts.
 - Pages generated using Shopify theme extensions.
