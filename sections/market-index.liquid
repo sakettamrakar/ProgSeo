@@ -1,0 +1,177 @@
+<div class="market-index" id="market-index-{{ section.id }}">
+  <input
+    type="search"
+    class="market-index__search"
+    id="market-index-search-{{ section.id }}"
+    placeholder="Search pages"
+  >
+  {% assign metafield_list = shop.metafields[section.settings.metafield_namespace][section.settings.metafield_key] %}
+  <div
+    class="market-index__results"
+    id="market-index-results-{{ section.id }}"
+    data-csv="{{ section.settings.csv_file }}"
+    data-json='{% if metafield_list != blank %}{{ metafield_list.value | json }}{% else %}[]{% endif %}'
+    data-per-page="{{ section.settings.per_page }}"
+  ></div>
+  <nav class="market-index__pagination">
+    <button type="button" class="market-index__prev">Previous</button>
+    <span class="market-index__page"></span>
+    <button type="button" class="market-index__next">Next</button>
+  </nav>
+</div>
+
+<script>
+  (function() {
+    var container = document.getElementById('market-index-results-{{ section.id }}');
+    if (!container) return;
+    var searchInput = document.getElementById('market-index-search-{{ section.id }}');
+    var csvUrl = container.dataset.csv;
+    var perPage = parseInt(container.dataset.perPage, 10) || 20;
+    var data = [];
+    var filtered = [];
+    var currentPage = 1;
+
+    function parseCSV(text) {
+      var lines = text.trim().split(/\r?\n/);
+      var headers = lines.shift().split(',');
+      return lines.map(function(line) {
+        var values = line.split(',');
+        var obj = {};
+        headers.forEach(function(h, i) {
+          obj[h.trim()] = values[i] ? values[i].trim() : '';
+        });
+        return obj;
+      });
+    }
+
+    function handleize(str) {
+      return (str || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+    }
+
+    function computeHandle(item) {
+      return handleize(item.city) + '-' + handleize(item.category_slug || item.category);
+    }
+
+    function groupData(items) {
+      var grouped = {};
+      items.forEach(function(item) {
+        var city = item.city || '';
+        var category = item.category || item.category_slug || '';
+        if (!grouped[city]) grouped[city] = {};
+        if (!grouped[city][category]) grouped[city][category] = [];
+        grouped[city][category].push(item);
+      });
+      return grouped;
+    }
+
+    function render() {
+      var q = searchInput.value.toLowerCase();
+      filtered = data.filter(function(item) {
+        var h = computeHandle(item);
+        var text = (item.city + ' ' + (item.category || item.category_slug) + ' ' + h).toLowerCase();
+        return text.indexOf(q) !== -1;
+      });
+      var totalPages = Math.max(1, Math.ceil(filtered.length / perPage));
+      if (currentPage > totalPages) currentPage = totalPages;
+      var start = (currentPage - 1) * perPage;
+      var pageItems = filtered.slice(start, start + perPage);
+      var grouped = groupData(pageItems);
+      var html = '';
+      Object.keys(grouped).sort().forEach(function(city) {
+        html += '<h2>' + city + '</h2>';
+        var cats = grouped[city];
+        Object.keys(cats).sort().forEach(function(cat) {
+          html += '<h3>' + cat + '</h3><ul class="market-index__grid">';
+          cats[cat].forEach(function(item) {
+            var handle = computeHandle(item);
+            html += '<li><a href="/pages/' + handle + '">' + handle + '</a></li>';
+          });
+          html += '</ul>';
+        });
+      });
+      container.innerHTML = html;
+      container.nextElementSibling.querySelector('.market-index__page').textContent = currentPage + '/' + totalPages;
+    }
+
+    function initEvents() {
+      searchInput.addEventListener('input', function() {
+        currentPage = 1;
+        render();
+      });
+      var pag = container.nextElementSibling;
+      pag.querySelector('.market-index__prev').addEventListener('click', function() {
+        if (currentPage > 1) {
+          currentPage--;
+          render();
+        }
+      });
+      pag.querySelector('.market-index__next').addEventListener('click', function() {
+        var totalPages = Math.max(1, Math.ceil(filtered.length / perPage));
+        if (currentPage < totalPages) {
+          currentPage++;
+          render();
+        }
+      });
+    }
+
+    function finalize() {
+      render();
+      initEvents();
+    }
+
+    var jsonData = container.dataset.json;
+    if (jsonData && jsonData !== 'null' && jsonData !== '[]') {
+      try {
+        data = JSON.parse(jsonData);
+        finalize();
+      } catch(e) {
+        finalize();
+      }
+    } else if (csvUrl) {
+      fetch(csvUrl)
+        .then(function(r) { return r.text(); })
+        .then(function(text) { data = parseCSV(text); finalize(); })
+        .catch(finalize);
+    } else {
+      finalize();
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Market index",
+  "settings": [
+    {
+      "type": "text",
+      "id": "csv_file",
+      "label": "CSV file URL",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "metafield_namespace",
+      "label": "Metafield namespace",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "metafield_key",
+      "label": "Metafield key",
+      "default": ""
+    },
+    {
+      "type": "number",
+      "id": "per_page",
+      "label": "Items per page",
+      "default": 20,
+      "min": 1
+    }
+  ],
+  "presets": [
+    {
+      "name": "Market index"
+    }
+  ]
+}
+{% endschema %}
