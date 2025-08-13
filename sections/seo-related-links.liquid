@@ -1,0 +1,75 @@
+{%- assign landing = page.metafields.custom.seo_landing_ref.value -%}
+{%- assign categories = landing.sibling_categories -%}
+{%- if categories == blank -%}
+  {%- assign categories = section.settings.sibling_categories | split: ',' -%}
+{%- endif -%}
+{%- assign cities = landing.top_cities -%}
+{%- if cities == blank -%}
+  {%- assign cities = section.settings.top_cities | split: ',' -%}
+{%- endif -%}
+
+{%- assign category_links = '' -%}
+{%- if landing and landing.city != blank -%}
+  {%- assign city_handle = landing.city | handleize -%}
+  {%- for cat in categories limit: section.settings.max_links -%}
+    {%- assign cat = cat | strip -%}
+    {%- if cat != blank -%}
+      {%- assign cat_handle = cat | handleize -%}
+      {%- capture category_links -%}{{ category_links }}<li><a href="/pages/{{ city_handle }}-{{ cat_handle }}">{{ landing.city }} {{ cat }}</a></li>{%- endcapture -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+
+{%- assign city_links = '' -%}
+{%- if landing and landing.category != blank -%}
+  {%- assign category_handle = landing.category | handleize -%}
+  {%- for c in cities limit: section.settings.max_links -%}
+    {%- assign c = c | strip -%}
+    {%- if c != blank -%}
+      {%- assign c_handle = c | handleize -%}
+      {%- capture city_links -%}{{ city_links }}<li><a href="/pages/{{ c_handle }}-{{ category_handle }}">{{ c }} {{ landing.category }}</a></li>{%- endcapture -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+
+{%- if category_links != '' or city_links != '' -%}
+  <section class="seo-related-links">
+    {%- if category_links != '' -%}
+      <ul class="seo-related-links__categories">
+        {{ category_links }}
+      </ul>
+    {%- endif -%}
+    {%- if city_links != '' -%}
+      <ul class="seo-related-links__cities">
+        {{ city_links }}
+      </ul>
+    {%- endif -%}
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "SEO related links",
+  "settings": [
+    {
+      "type": "text",
+      "id": "sibling_categories",
+      "label": "Sibling categories (comma-separated)"
+    },
+    {
+      "type": "text",
+      "id": "top_cities",
+      "label": "Top cities (comma-separated)"
+    },
+    {
+      "type": "range",
+      "id": "max_links",
+      "label": "Max links per list",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "default": 5
+    }
+  ]
+}
+{% endschema %}
