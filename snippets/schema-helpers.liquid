@@ -1,0 +1,4 @@
+{%- comment -%}Outputs JSON-LD script tag when data is present{%- endcomment -%}
+{%- if data and data != blank -%}
+  <script type="application/ld+json">{{ data | strip | strip_newlines }}</script>
+{%- endif -%}
