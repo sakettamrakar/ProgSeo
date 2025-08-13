@@ -1,0 +1,3 @@
+city,category_slug,title,h1,intro_html,body_html,faq_json,seo_title,seo_description,provenance
+Portland,plumbing,Portland Plumbing Services,Portland Plumbing Services,<p>Intro to Portland plumbing</p>,<p>Body about plumbers</p>,"[{""q"":""Q1"",""a"":""A1""}]",Portland Plumbing,Best plumbers in Portland,existing
+Seattle,roofing,Seattle Roofing Pros,Seattle Roofing Pros,<p>Intro to Seattle roofing</p>,<p>Roofing body</p>,[],Seattle Roofing,Top roofing in Seattle,existing
