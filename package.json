@@ -9,13 +9,21 @@
     "theme:dev": "echo 'Run shopify theme dev'",
     "theme:push": "echo 'Run shopify theme push'",
     "theme:pull": "echo 'Run shopify theme pull'",
-    "lint": "echo 'linting'",
-    "format": "echo 'formatting'",
-    "test": "npm run lint"
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "test": "npm run lint",
+    "prettier:check": "prettier --check .",
+    "theme-check": "node node_modules/@shopify/theme-check-node/dist/cli.js ."
   },
   "dependencies": {
     "csv-parse": "^6.1.0",
     "csv-stringify": "^6.6.0",
     "openai": "^4.104.0"
+  },
+  "devDependencies": {
+    "@shopify/theme-check-node": "^3.20.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.6.2",
+    "@shopify/prettier-plugin-liquid": "^1.9.3"
   }
 }
