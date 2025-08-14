@@ -1,3 +1,57 @@
-Handle,Title,Template Suffix,Published,SEO Title,SEO Description,Metafield: custom.seo_landing_ref [metaobject_reference]
-portland-plumbing-experts,Portland Plumbing Services,seo-landing,FALSE,Portland Plumbing,Best plumbers in Portland,seo_landing/portland-plumbing-experts
-seattle-roofing,Seattle Roofing Pros,seo-landing,FALSE,Seattle Roofing,Top roofing in Seattle,seo_landing/seattle-roofing
+Handle,Title,Template Suffix,Published,Metafield: custom.seo_landing_ref [metaobject_reference]
+raipur-rotavator,rotavator price in Raipur,seo-landing,FALSE,seo_landing/raipur-rotavator
+bilaspur-rotavator,rotavator price in Bilaspur,seo-landing,FALSE,seo_landing/bilaspur-rotavator
+durg-rotavator,rotavator price in Durg,seo-landing,FALSE,seo_landing/durg-rotavator
+rajnandgaon-rotavator,rotavator price in Rajnandgaon,seo-landing,FALSE,seo_landing/rajnandgaon-rotavator
+korba-rotavator,rotavator price in Korba,seo-landing,FALSE,seo_landing/korba-rotavator
+raipur-seed-drill,seed drill price in Raipur,seo-landing,FALSE,seo_landing/raipur-seed-drill
+bilaspur-seed-drill,seed drill price in Bilaspur,seo-landing,FALSE,seo_landing/bilaspur-seed-drill
+durg-seed-drill,seed drill price in Durg,seo-landing,FALSE,seo_landing/durg-seed-drill
+rajnandgaon-seed-drill,seed drill price in Rajnandgaon,seo-landing,FALSE,seo_landing/rajnandgaon-seed-drill
+korba-seed-drill,seed drill price in Korba,seo-landing,FALSE,seo_landing/korba-seed-drill
+raipur-thresher,thresher price in Raipur,seo-landing,FALSE,seo_landing/raipur-thresher
+bilaspur-thresher,thresher price in Bilaspur,seo-landing,FALSE,seo_landing/bilaspur-thresher
+durg-thresher,thresher price in Durg,seo-landing,FALSE,seo_landing/durg-thresher
+rajnandgaon-thresher,thresher price in Rajnandgaon,seo-landing,FALSE,seo_landing/rajnandgaon-thresher
+korba-thresher,thresher price in Korba,seo-landing,FALSE,seo_landing/korba-thresher
+raipur-tractor-trolley,tractor trolley price in Raipur,seo-landing,FALSE,seo_landing/raipur-tractor-trolley
+bilaspur-tractor-trolley,tractor trolley price in Bilaspur,seo-landing,FALSE,seo_landing/bilaspur-tractor-trolley
+durg-tractor-trolley,tractor trolley price in Durg,seo-landing,FALSE,seo_landing/durg-tractor-trolley
+rajnandgaon-tractor-trolley,tractor trolley price in Rajnandgaon,seo-landing,FALSE,seo_landing/rajnandgaon-tractor-trolley
+korba-tractor-trolley,tractor trolley price in Korba,seo-landing,FALSE,seo_landing/korba-tractor-trolley
+raipur-power-weeder,power weeder price in Raipur,seo-landing,FALSE,seo_landing/raipur-power-weeder
+bilaspur-power-weeder,power weeder price in Bilaspur,seo-landing,FALSE,seo_landing/bilaspur-power-weeder
+durg-power-weeder,power weeder price in Durg,seo-landing,FALSE,seo_landing/durg-power-weeder
+rajnandgaon-power-weeder,power weeder price in Rajnandgaon,seo-landing,FALSE,seo_landing/rajnandgaon-power-weeder
+korba-power-weeder,power weeder price in Korba,seo-landing,FALSE,seo_landing/korba-power-weeder
+raipur-brush-cutter,brush cutter price in Raipur,seo-landing,FALSE,seo_landing/raipur-brush-cutter
+bilaspur-brush-cutter,brush cutter price in Bilaspur,seo-landing,FALSE,seo_landing/bilaspur-brush-cutter
+durg-brush-cutter,brush cutter price in Durg,seo-landing,FALSE,seo_landing/durg-brush-cutter
+rajnandgaon-brush-cutter,brush cutter price in Rajnandgaon,seo-landing,FALSE,seo_landing/rajnandgaon-brush-cutter
+korba-brush-cutter,brush cutter price in Korba,seo-landing,FALSE,seo_landing/korba-brush-cutter
+ambikapur-earth-auger,earth auger price in Ambikapur,seo-landing,FALSE,seo_landing/ambikapur-earth-auger
+raigarh-earth-auger,earth auger price in Raigarh,seo-landing,FALSE,seo_landing/raigarh-earth-auger
+dhamtari-earth-auger,earth auger price in Dhamtari,seo-landing,FALSE,seo_landing/dhamtari-earth-auger
+jagdalpur-earth-auger,earth auger price in Jagdalpur,seo-landing,FALSE,seo_landing/jagdalpur-earth-auger
+kanker-earth-auger,earth auger price in Kanker,seo-landing,FALSE,seo_landing/kanker-earth-auger
+ambikapur-rice-transplanter,rice transplanter price in Ambikapur,seo-landing,FALSE,seo_landing/ambikapur-rice-transplanter
+raigarh-rice-transplanter,rice transplanter price in Raigarh,seo-landing,FALSE,seo_landing/raigarh-rice-transplanter
+dhamtari-rice-transplanter,rice transplanter price in Dhamtari,seo-landing,FALSE,seo_landing/dhamtari-rice-transplanter
+jagdalpur-rice-transplanter,rice transplanter price in Jagdalpur,seo-landing,FALSE,seo_landing/jagdalpur-rice-transplanter
+kanker-rice-transplanter,rice transplanter price in Kanker,seo-landing,FALSE,seo_landing/kanker-rice-transplanter
+ambikapur-rice-mill,rice mill price in Ambikapur,seo-landing,FALSE,seo_landing/ambikapur-rice-mill
+raigarh-rice-mill,rice mill price in Raigarh,seo-landing,FALSE,seo_landing/raigarh-rice-mill
+dhamtari-rice-mill,rice mill price in Dhamtari,seo-landing,FALSE,seo_landing/dhamtari-rice-mill
+jagdalpur-rice-mill,rice mill price in Jagdalpur,seo-landing,FALSE,seo_landing/jagdalpur-rice-mill
+kanker-rice-mill,rice mill price in Kanker,seo-landing,FALSE,seo_landing/kanker-rice-mill
+ambikapur-milking-machine,milking machine price in Ambikapur,seo-landing,FALSE,seo_landing/ambikapur-milking-machine
+raigarh-milking-machine,milking machine price in Raigarh,seo-landing,FALSE,seo_landing/raigarh-milking-machine
+dhamtari-milking-machine,milking machine price in Dhamtari,seo-landing,FALSE,seo_landing/dhamtari-milking-machine
+jagdalpur-milking-machine,milking machine price in Jagdalpur,seo-landing,FALSE,seo_landing/jagdalpur-milking-machine
+kanker-milking-machine,milking machine price in Kanker,seo-landing,FALSE,seo_landing/kanker-milking-machine
+durg-earth-auger,balwaan earth auger 52cc price Durg,seo-landing,FALSE,seo_landing/durg-earth-auger
+bilaspur-pulverizer,Rupali pulverizer price in Bilaspur,seo-landing,FALSE,seo_landing/bilaspur-pulverizer
+korba-rice-transplanter,Machine Point rice transplanter 2 rows price Korba,seo-landing,FALSE,seo_landing/korba-rice-transplanter
+raigarh-power-weeder,balwaan power weeder 7hp price Raigarh,seo-landing,FALSE,seo_landing/raigarh-power-weeder
+ambikapur-tractor-trolley,mahindra tractor trolley 10 ton price Ambikapur,seo-landing,FALSE,seo_landing/ambikapur-tractor-trolley
+jagdalpur-thresher,paddy thresher with engine price Jagdalpur,seo-landing,FALSE,seo_landing/jagdalpur-thresher

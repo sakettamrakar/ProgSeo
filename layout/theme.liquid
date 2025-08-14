@@ -80,7 +80,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     {{ content_for_header }}
 
-    {{ 'theme.css' | asset_url | stylesheet_tag }}
+    {%- comment -%} Removed theme.css and giftcard.css to avoid Shopify overwrite errors. Use custom-theme.css for overrides. {%- endcomment -%}
+    {{ 'custom-theme.css' | asset_url | stylesheet_tag }}
 
     {% unless settings.reduce_animations %}
       {{ 'ripple.css' | asset_url | stylesheet_tag }}

@@ -41,7 +41,8 @@
       if(('ontouchstart' in window)||window.DocumentTouch&&document instanceof DocumentTouch)document.documentElement.className=document.documentElement.className.replace(/\bno-touch\b/,'has-touch');
     </script>
 
-    {{ 'theme.css' | asset_url | stylesheet_tag }}
+    {%- comment -%} Removed theme.css and giftcard.css to avoid Shopify overwrite errors. Use custom-theme.css for overrides. {%- endcomment -%}
+    {{ 'custom-theme.css' | asset_url | stylesheet_tag }}
 
     {% comment %}Inject theme-object begin{% endcomment %}
     <script>

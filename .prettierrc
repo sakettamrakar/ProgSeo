@@ -1,3 +1,4 @@
+// Offline/CSV-only: No Shopify CLI, no store domain, no live theme actions.
 {
   "plugins": ["@shopify/prettier-plugin-liquid"]
 }

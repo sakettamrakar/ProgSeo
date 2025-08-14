@@ -1,0 +1,93 @@
+/* Custom theme CSS. Add your overrides here instead of theme.css or giftcard.css. */
+
+@font-face {
+  font-family: "Nunito Sans";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("//machinepoint.in/cdn/fonts/nunito_sans/nunitosans_n4.0276fe080df0ca4e6a22d9cb55aed3ed5ba6b1da.woff2?h1=bWFjaGluZXBvaW50LTI0eWFyZHMuYWNjb3VudC5teXNob3BpZnkuY29t&h2=bWFjaGluZXBvaW50Lmlu&hmac=3ea8000791bd877faee63a1cad714e1cca4e7bff994746a8bfac3a10c2160d20") format("woff2"),
+       url("//machinepoint.in/cdn/fonts/nunito_sans/nunitosans_n4.b4964bee2f5e7fd9c3826447e73afe2baad607b7.woff?h1=bWFjaGluZXBvaW50LTI0eWFyZHMuYWNjb3VudC5teXNob3BpZnkuY29t&h2=bWFjaGluZXBvaW50Lmlu&hmac=2229cb9ce2be92703e649edd0b802ed6bcb897a594e52a7651105e5bc3c0b876") format("woff");
+}
+
+@font-face {
+  font-family: "Nunito Sans";
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: url("//machinepoint.in/cdn/fonts/nunito_sans/nunitosans_i4.6e408730afac1484cf297c30b0e67c86d17fc586.woff2?h1=bWFjaGluZXBvaW50LTI0eWFyZHMuYWNjb3VudC5teXNob3BpZnkuY29t&h2=bWFjaGluZXBvaW50Lmlu&hmac=ae631056af4ec5102ba4a03e5faad14de0fad88745e839900085bbe9c6aafdf") format("woff2"),
+       url("//machinepoint.in/cdn/fonts/nunito_sans/nunitosans_i4.c9b6dcbfa43622b39a5990002775a8381942ae38.woff?h1=bWFjaGluZXBvaW50LTI0eWFyZHMuYWNjb3VudC5teXNob3BpZnkuY29t&h2=bWFjaGluZXBvaW50Lmlu&hmac=6dd422f1837f3f55eec30467258af08b031283d6d079d225092dfaff5983751a") format("woff");
+}
+
+@font-face {
+  font-family: "Nunito Sans";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("//machinepoint.in/cdn/fonts/nunito_sans/nunitosans_n7.25d963ed46da26098ebeab731e90d8802d989fa5.woff2?h1=bWFjaGluZXBvaW50LTI0eWFyZHMuYWNjb3VudC5teXNob3BpZnkuY29t&h2=bWFjaGluZXBvaW50Lmlu&hmac=ae251b8fa5330066f871f8abe927c829af77b56b8e5542e942c5fa0b569ff43b") format("woff2"),
+       url("//machinepoint.in/cdn/fonts/nunito_sans/nunitosans_n7.d32e3219b3d2ec82285d3027bd673efc61a996c8.woff?h1=bWFjaGluZXBvaW50LTI0eWFyZHMuYWNjb3VudC5teXNob3BpZnkuY29t&h2=bWFjaGluZXBvaW50Lmlu&hmac=9398fe2c0a6cdc6eeada97c76144a7b289c970ec614487ff2659aa70b2fdd8fa") format("woff");
+}
+
+  @font-face {
+  font-family: "Nunito Sans";
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+  src: url("//machinepoint.in/cdn/fonts/nunito_sans/nunitosans_i7.8c1124729eec046a321e2424b2acf328c2c12139.woff2?h1=bWFjaGluZXBvaW50LTI0eWFyZHMuYWNjb3VudC5teXNob3BpZnkuY29t&h2=bWFjaGluZXBvaW50Lmlu&hmac=f8885038f401b116bb2cb372f8d3a19707b47fbbd79c5b2201ccf37b79efbd7c") format("woff2"),
+       url("//machinepoint.in/cdn/fonts/nunito_sans/nunitosans_i7.af4cda04357273e0996d21184432bcb14651a64d.woff?h1=bWFjaGluZXBvaW50LTI0eWFyZHMuYWNjb3VudC5teXNob3BpZnkuY29t&h2=bWFjaGluZXBvaW50Lmlu&hmac=830393248a69b5aef1a3a1b9a6d3826ea394246fcef1f25267b68bfc16d775c6") format("woff");
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: url("//machinepoint.in/cdn/fonts/montserrat/montserrat_n8.853056e398b4dadf6838423edb7abaa02f651554.woff2?h1=bWFjaGluZXBvaW50LTI0eWFyZHMuYWNjb3VudC5teXNob3BpZnkuY29t&h2=bWFjaGluZXBvaW50Lmlu&hmac=e75425d4ed8ce990927060dee61ff5e29467189db796c0657f465d9e483f3f05") format("woff2"),
+       url("//machinepoint.in/cdn/fonts/montserrat/montserrat_n8.9201aba6104751e1b3e48577a5a739fc14862200.woff?h1=bWFjaGluZXBvaW50LTI0eWFyZHMuYWNjb3VudC5teXNob3BpZnkuY29t&h2=bWFjaGluZXBvaW50Lmlu&hmac=b9143735910789356cc1214c9c83220119d9f45015b410028c59d158184a65dc") format("woff");
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+  src: url("//machinepoint.in/cdn/fonts/montserrat/montserrat_i8.b5b703476aa25307888d32fbbb26f33913f79842.woff2?h1=bWFjaGluZXBvaW50LTI0eWFyZHMuYWNjb3VudC5teXNob3BpZnkuY29t&h2=bWFjaGluZXBvaW50Lmlu&hmac=7ed49ff5e53606e769827b0c385b8174c57b51a2302017be86fbf3cb3b533822") format("woff2"),
+       url("//machinepoint.in/cdn/fonts/montserrat/montserrat_i8.1037a8c7c9042232c15d221799b18df65709cdd0.woff?h1=bWFjaGluZXBvaW50LTI0eWFyZHMuYWNjb3VudC5teXNob3BpZnkuY29t&h2=bWFjaGluZXBvaW50Lmlu&hmac=651a0f42f48e73a8353424988eb7a03393186b6fd55cb74ac9620bd8e3e51eef") format("woff");
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+  src: url("//machinepoint.in/cdn/fonts/montserrat/montserrat_n9.680ded1be351aa3bf3b3650ac5f6df485af8a07c.woff2?h1=bWFjaGluZXBvaW50LTI0eWFyZHMuYWNjb3VudC5teXNob3BpZnkuY29t&h2=bWFjaGluZXBvaW50Lmlu&hmac=09ca977407422b3f7b76696678e20a62332678016c941e23ca9effbbe0798266") format("woff2"),
+       url("//machinepoint.in/cdn/fonts/montserrat/montserrat_n9.0cc5aaeff26ef35c23b69a061997d78c9697a382.woff?h1=bWFjaGluZXBvaW50LTI0eWFyZHMuYWNjb3VudC5teXNob3BpZnkuY29t&h2=bWFjaGluZXBvaW50Lmlu&hmac=32a26d0a1045712d397608953e0aef4289868ec1c0302c6fd9ee27368eb617b1") format("woff");
+}
+
+  @font-face {
+  font-family: Montserrat;
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+  src: url("//machinepoint.in/cdn/fonts/montserrat/montserrat_i9.cd566e55c5982a3a39b3949665a79c881e095b14.woff2?h1=bWFjaGluZXBvaW50LTI0eWFyZHMuYWNjb3VudC5teXNob3BpZnkuY29t&h2=bWFjaGluZXBvaW50Lmlu&hmac=4cc89aaec928ec60ff784d7ec7a853aa98e4219279be43eefdb7b605302c88d9") format("woff2"),
+       url("//machinepoint.in/cdn/fonts/montserrat/montserrat_i9.b18527943b7f5bc1488b82e39deb595a73d3e645.woff?h1=bWFjaGluZXBvaW50LTI0eWFyZHMuYWNjb3VudC5teXNob3BpZnkuY29t&h2=bWFjaGluZXBvaW50Lmlu&hmac=ac8b8500f54eff1a213fa9fcc8e5408bef95c1fa010db1d157c7a47a9354b8d2") format("woff");
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("//machinepoint.in/cdn/fonts/montserrat/montserrat_n7.3c434e22befd5c18a6b4afadb1e3d77c128c7939.woff2?h1=bWFjaGluZXBvaW50LTI0eWFyZHMuYWNjb3VudC5teXNob3BpZnkuY29t&h2=bWFjaGluZXBvaW50Lmlu&hmac=df85313cac966f9091cbae7806fd42ceecc8cc5fea65407daf4bc072133065af") format("woff2"),
+       url("//machinepoint.in/cdn/fonts/montserrat/montserrat_n7.5d9fa6e2cae713c8fb539a9876489d86207fe957.woff?h1=bWFjaGluZXBvaW50LTI0eWFyZHMuYWNjb3VudC5teXNob3BpZnkuY29t&h2=bWFjaGluZXBvaW50Lmlu&hmac=c69aeab9eda8c6e6a04d50a4998c7c5a421bd9fed9279d0b61569827350c432c") format("woff");
+}
+
+  @font-face {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+  src: url("//machinepoint.in/cdn/fonts/montserrat/montserrat_i7.a0d4a463df4f146567d871890ffb3c80408e7732.woff2?h1=bWFjaGluZXBvaW50LTI0eWFyZHMuYWNjb3VudC5teXNob3BpZnkuY29t&h2=bWFjaGluZXBvaW50Lmlu&hmac=d9787c8a3753d62d97ade3f96862db26a9cfbec5107fa8bda80bb05e92a8a9fc") format("woff2"),
+       url("//machinepoint.in/cdn/fonts/montserrat/montserrat_i7.f6ec9f2a0681acc6f8152c40921d2a4d2e1a2c78.woff?h1=bWFjaGluZXBvaW50LTI0eWFyZHMuYWNjb3VudC5teXNob3BpZnkuY29t&h2=bWFjaGluZXBvaW50Lmlu&hmac=2cbbe5ee2325102acbba3b3792dc6516aa79e37a64d89876711dae7cb8435fa0") format("woff");
+}
+
+/* ...rest of theme.css content... */

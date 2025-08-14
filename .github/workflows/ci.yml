@@ -1,3 +1,4 @@
+# Offline-only CI: No Shopify CLI, no store domain, no theme push. Only lint, format, and audit.
 name: CI
 
 on:
@@ -16,11 +17,3 @@ jobs:
       - run: npm run theme-check
       - run: npm run prettier:check
       - run: npm run lint
-      - name: Push preview theme
-        if: startsWith(github.ref, 'refs/heads/seo/')
-        env:
-          SHOPIFY_FLAG_STORE: ${{ secrets.SHOPIFY_FLAG_STORE }}
-          SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
-        run: |
-          npm install -g @shopify/cli @shopify/theme
-          shopify theme push --unpublished --json

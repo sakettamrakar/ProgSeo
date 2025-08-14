@@ -6,9 +6,9 @@
     "node": ">=18"
   },
   "scripts": {
-    "theme:dev": "echo 'Run shopify theme dev'",
-    "theme:push": "echo 'Run shopify theme push'",
-    "theme:pull": "echo 'Run shopify theme pull'",
+    "theme:dev": "shopify theme dev",
+    "theme:push": "echo 'Run shopify theme push (stubbed, offline-only)'",
+    "theme:pull": "echo 'Run shopify theme pull (stubbed, offline-only)'",
     "lint": "eslint --no-error-on-unmatched-pattern .",
     "format": "prettier --write .",
     "test": "npm run lint",
@@ -16,14 +16,14 @@
     "theme-check": "node node_modules/@shopify/theme-check-node/dist/cli.js ."
   },
   "dependencies": {
-    "csv-parse": "^6.1.0",
-    "csv-stringify": "^6.6.0",
     "openai": "^4.104.0"
   },
   "devDependencies": {
+    "@shopify/prettier-plugin-liquid": "^1.9.3",
     "@shopify/theme-check-node": "^3.20.0",
+    "csv-parse": "^6.1.0",
+    "csv-stringify": "^6.6.0",
     "eslint": "^8.57.0",
-    "prettier": "^3.6.2",
-    "@shopify/prettier-plugin-liquid": "^1.9.3"
+    "prettier": "^3.6.2"
   }
 }
