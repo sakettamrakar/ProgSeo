@@ -188,7 +188,10 @@
  {{ product.media | where: 'media_type', 'model' | json }}
  </script>
  </div></div></div> </div></div></div><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__column--resize" style="display: none;"></div></div> <div class="ecom-column ecom-core core__column--last ecom-fxp6ollqnzt"><div class="core__column--wrapper" style=""><div class="core__blocks" index="1"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block ecom-5qhzvstbvpc" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__title" deep="2"><div class="ecom-product-single__title-wrapper"><div class="ecom-product-single__title-container"><h2 class="ecom-product__heading" href="{{ product.url }}" title="{{ product.title }}">{{ product.title }}</h2></div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-e9htia8ha2c" data-core-is="block"><div class="ecom-element ecom-product-single ecom-product-single__rating" deep="2"><div class="ecom-product-single__rating-wrapper" data-review-platform="
+ {%- assign review_platform = nil -%}
+ {%- if shop.metafields.ecomposer.app_review != blank -%}
  {%- assign review_platform = shop.metafields.ecomposer.app_review.value -%}
+ {%- endif -%}
  {{review_platform}}
  "><div class="ecom-product-single__rating-container">
  {%- if review_platform -%}

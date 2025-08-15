@@ -1,2 +1,5 @@
 # Offline/CSV-only: No Shopify CLI, no store domain, no live theme actions.
 extends: theme-check:recommended
+ignore:
+  - node_modules/**/*
+  - docs/**/*

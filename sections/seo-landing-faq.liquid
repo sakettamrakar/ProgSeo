@@ -1,4 +1,7 @@
-{%- assign landing = page.metafields.custom.seo_landing_ref.value -%}
+{%- assign landing = nil -%}
+{%- if page.metafields.custom.seo_landing_ref != blank -%}
+  {%- assign landing = page.metafields.custom.seo_landing_ref.value -%}
+{%- endif -%}
 {%- if landing == blank or landing.faq_json == blank -%}
   <div class="page-content">
     <p>Add FAQ entries to the SEO landing metaobject to display them here.</p>

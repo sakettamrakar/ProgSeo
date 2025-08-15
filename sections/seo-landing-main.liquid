@@ -1,4 +1,7 @@
-{%- assign landing = page.metafields.custom.seo_landing_ref.value -%}
+{%- assign landing = nil -%}
+{%- if page.metafields.custom.seo_landing_ref != blank -%}
+  {%- assign landing = page.metafields.custom.seo_landing_ref.value -%}
+{%- endif -%}
 {%- if landing == blank -%}
   <div class="page-content">
     <p>Link a SEO landing metaobject to this page to display its content.</p>
@@ -12,7 +15,7 @@
   {%- if content_length < threshold -%}
     {%- assign noindex_flag = true -%}
   {%- endif -%}
-  {%- if page.metafields.custom.noindex.value == true -%}
+  {%- if page.metafields.custom.noindex and page.metafields.custom.noindex.value == true -%}
     {%- assign noindex_flag = true -%}
   {%- endif -%}
   {%- if noindex_flag -%}

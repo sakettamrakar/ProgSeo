@@ -1,10 +1,15 @@
-{%- assign landing = page.metafields.custom.seo_landing_ref.value -%}
-{%- assign categories = landing.sibling_categories -%}
-{%- if categories == blank -%}
+{%- assign landing = nil -%}
+{%- if page.metafields.custom.seo_landing_ref != blank -%}
+  {%- assign landing = page.metafields.custom.seo_landing_ref.value -%}
+{%- endif -%}
+{%- if landing and landing.sibling_categories != blank -%}
+  {%- assign categories = landing.sibling_categories -%}
+{%- else -%}
   {%- assign categories = section.settings.sibling_categories | split: ',' -%}
 {%- endif -%}
-{%- assign cities = landing.top_cities -%}
-{%- if cities == blank -%}
+{%- if landing and landing.top_cities != blank -%}
+  {%- assign cities = landing.top_cities -%}
+{%- else -%}
   {%- assign cities = section.settings.top_cities | split: ',' -%}
 {%- endif -%}
 
