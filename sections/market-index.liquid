@@ -5,7 +5,10 @@
     id="market-index-search-{{ section.id }}"
     placeholder="Search pages"
   >
-  {% assign metafield_list = shop.metafields[section.settings.metafield_namespace][section.settings.metafield_key] %}
+  {% assign metafield_list = nil %}
+  {% if shop.metafields[section.settings.metafield_namespace] and shop.metafields[section.settings.metafield_namespace][section.settings.metafield_key] %}
+    {% assign metafield_list = shop.metafields[section.settings.metafield_namespace][section.settings.metafield_key] %}
+  {% endif %}
   <div
     class="market-index__results"
     id="market-index-results-{{ section.id }}"
