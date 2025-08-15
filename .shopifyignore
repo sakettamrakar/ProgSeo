@@ -3,3 +3,6 @@ node_modules
 build
 /dist
 *.log
+# keep these served from the store's copy; don't try to overwrite
+assets/theme.css
+assets/giftcard.css
