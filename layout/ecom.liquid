@@ -90,8 +90,10 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ og_title }}">
   <meta name="twitter:description" content="{{ og_description }}">
-  {%- render 'ecom_header', ECOM_THEME: true -%}
-   {{ content_for_header }}
+  {% section 'static-header' %}
+  <link rel="preload" as="style" href="{{ 'custom-theme.css' | asset_url }}">
+  {{ 'custom-theme.css' | asset_url | stylesheet_tag }}
+  {{ content_for_header }}
 
 </head>
 
@@ -99,6 +101,6 @@
   <div class="EComposer-theme">
     {{ content_for_layout }}
   </div>
- {%- render 'ecom_footer', ECOM_THEME: true -%}
+ {% section 'static-footer' %}
 </body>
 </html>
