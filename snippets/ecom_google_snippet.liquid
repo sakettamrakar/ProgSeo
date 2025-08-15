@@ -6,13 +6,6 @@
     "url": "https://{{ shop.domain }}",
     "telephone": "{{ shop.phone }}",
     "description": {{ shop.description | json }},
-    {%- unless logo_url == blank -%}
-      "image": "{{ logo_url | remove: '\' }}",
-      "logo": "{{ logo_url | remove: '\' }}",
-    {%- else -%}
-      "image": "https:{{ 'logo.png' | asset_url }}",
-      "logo": "https:{{ 'logo.png' | asset_url }}",
-    {%- endunless -%}
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "{{ shop.address.street }}",
@@ -330,7 +323,6 @@
     "name": {{ article.title | json }},
     "publisher": {
       "@type": "Organization",
-      "logo": {"@type": "ImageObject","url": "https:{{ 'logo.png' | asset_url }}"},
       "name": {{ shop.name | json }}
     },
     "headline": {{ article.title | json }},
